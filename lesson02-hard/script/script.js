@@ -7,8 +7,7 @@ let mult =1;
 for (let i=0; i<num1.length; i++){
     mult *= num1[i];
 }
-
-console.log(mult);
+mult = mult**3;
 let output = mult.toString().split('');
 let alertWindow = output[0] + output[1];
 alert(alertWindow);
