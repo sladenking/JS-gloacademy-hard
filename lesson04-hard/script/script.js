@@ -4,8 +4,7 @@ let input = prompt("Введите сообщение");
 console.log('input: ', input);
 
 let textEditor = function (input) {
-  let regexp = /\D/g;
-  if (input.match(regexp)) {
+  if (isNaN(parseFloat(input))) {
     input = input.trim();
     let sliced = input.slice(0, 30);
     if (sliced.length < input.length) {
