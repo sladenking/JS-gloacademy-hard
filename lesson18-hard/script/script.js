@@ -6,14 +6,14 @@ window.addEventListener("DOMContentLoaded", () => {
 		resetBtn = document.querySelector('.reset__btn'),
 		img = document.querySelector('img');
 
-	let flyInterval;
-	let count = 0;
-	let animateStart = false;
+	let flyInterval,
+		count = 0,
+		animateStart = false;
 
-	const start = function() {
-		flyInterval = requestAnimationFrame(start);
+	const startAnimate = function() {
+		flyInterval = requestAnimationFrame(startAnimate);
 		count++;
-		if (count < 300) {
+		if (count < 500) {
 			img.style.left = count * 2 + 'px';
 			img.style.transform = `rotate(${count * 5}deg)`;
 		} else {
@@ -21,22 +21,21 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 	};
 
-
-
 	resetBtn.addEventListener('click', () => {
 		count = 0;
 		animateStart = false;
 		img.style.left = 0;
+		img.style.transform = `rotate(0deg)`;
 		cancelAnimationFrame(flyInterval);
 	});
 
 	startBtn.addEventListener('click', () => {
-		if (!animateStart) {
-			animateStart = true;
-			flyInterval = requestAnimationFrame(start);
-		} else {
+		if (animateStart) {
 			animateStart = false;
 			cancelAnimationFrame(flyInterval);
+		} else {
+			animateStart = true;
+			flyInterval = requestAnimationFrame(startAnimate);
 		}
 
 	});
