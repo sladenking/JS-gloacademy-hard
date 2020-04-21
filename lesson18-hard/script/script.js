@@ -35,5 +35,5 @@ window.addEventListener('DOMContentLoaded', () => {
 		}, 1000);
 	}
 
-	countTimer('21 April 2020');
+	countTimer();
 });
