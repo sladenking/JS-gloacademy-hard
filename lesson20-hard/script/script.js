@@ -77,22 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
 				menu.classList.remove('active-menu');
 			}
 		});
-		// const handlerMenu = event => {
-		// 	event.preventDefault();
-		// 	const target = event.target;
-
-		// 	if (target.tagName === 'A' && target.className !== 'close-btn') {
-		// 		scroll(target);
-		// 	} else if (!target.classList.contains('close-btn')) {
-		// 		menu.classList.remove('active-menu');
-		// 	}
-
-		// 	menu.classList.toggle('active-menu');
-		// };
-
-		// menu.addEventListener('click', handlerMenu);
-
-		// btnMenu.addEventListener('click', handlerMenu);
 	};
 
 	toggleMenu();
